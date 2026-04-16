@@ -38,8 +38,7 @@ def bandpass(sig, low, high, fs, order=4):
     b, a = butter(order, [low/nyq, high/nyq], btype='band')
     return filtfilt(b, a, sig)
 
-filtered = bandpass(signal, 0.5, 40, fs)
-filtered = -filtered #invert because the signal appears to be inverted
+filtered = bandpass(signal, 0.5, 20, fs)
 
 # ------- PEAK DETECTION --------
 
