@@ -90,13 +90,28 @@ plt.plot(time, red_filtered, label='Filtered')
 plt.legend()
 plt.title('Red Channel: Raw vs Filtered')
 
+plt.figure()
+plt.plot(time, ir, alpha=0.4, label='Raw')
+plt.plot(time, ir_filtered, label='Filtered')
+plt.legend()
+plt.title('IR Channel: Raw vs Filtered')
+
 #peak detection on filtered red signal
 plt.figure()
 plt.plot(time, red_filtered)
 plt.plot(time[peaks], red_filtered[peaks], "x")
 plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
-plt.title("Peak Detection")
+plt.title("RED Peak Detection")
+
+#peak detection on filtered IR signal
+plt.figure()
+plt.plot(time, ir_filtered)
+plt.plot(time[peaks], ir_filtered[peaks], "x")
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.title("IR Peak Detection")
+
 
 #checking waveform shape of a single beat
 idx = peaks[10]
